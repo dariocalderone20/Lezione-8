@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+void print_menu();
+int gioca_partita();
+
+int main() {
+    char scelta;
+
+    print_menu();
+
+    scanf("%c", &scelta);
+
+    if (scelta == 'B') {
+        printf("Grazie per aver giocato, arrivederci\n");
+        return 0;
+    }
+
+    while (scelta == 'A') {
+        gioca_partita();
+        print_menu();
+        scanf(" %c", &scelta); // Aggiunto uno spazio prima di %c per consumare eventuali caratteri di nuova riga residui
+    }
+
+    return 0;
+}
+
+void print_menu() {
+    printf("Start menu:\n");
+    printf("A >> Inizia una nuova partita\nB >> Esci dal gioco\n");
+    printf("Inserisci la lettera corrispondente alla tua scelta:");
+}
+
+int gioca_partita() {
+    int punteggio = 0;
+    char nome[20];
+    char risposta1[2], risposta2[2]; // Modificato il tipo di dato per le risposte
+
+    printf("Inserisci il tuo nome:\n");
+    scanf("%s", nome); // Modificato il tipo di dato per la lettura del nome
+
+    printf("Domanda numero 1:\n");
+    printf("Qual è la capitale italiana?\n");
+    printf("A >>> Milano\nB >>> Roma\nC >>> Catania\n");
+    printf("Inserire la risposta:");
+    scanf(" %s", risposta1); // Aggiunto uno spazio prima di %s
+
+    if (risposta1[0] == 'B') { // Accedere al primo carattere della risposta
+        punteggio++;
+    }
+
+    printf("Domanda numero 2:\n");
+    printf("Quanti continenti esistono?\n");
+    printf("A >>> 7\nB >>> 5\nC >>> 8\n");
+    printf("Inserire la risposta:");
+    scanf(" %s", risposta2); // Aggiunto uno spazio prima di %s
+
+    if (risposta2[0] == 'A') { // Accedere al primo carattere della risposta
+        punteggio++;
+    }
+
+    printf("Partita conclusa, punteggio totalizzato da %s:%d\n", nome, punteggio);
+
+    return 0;
+}
