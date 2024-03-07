@@ -40,17 +40,17 @@ int gioca_partita() {
 
     printf("Domanda numero 1:\n");
     printf("Qual è la capitale italiana?\n");
-    printf("A >>> Milano\nB >>> Roma\nC >>> Catania\n");
+    printf("A >>> Milano\nB >>> Roma\nC >>> Napoli\n");
     printf("Inserire la risposta:");
-    scanf(" %s", risposta1); // Aggiunto uno spazio prima di %s
+    scanf(" %s", risposta1);
 
     if (risposta1[0] == 'B') {
         punteggio++;
     }
 
     printf("Domanda numero 2:\n");
-    printf("Quanti continenti esistono?\n");
-    printf("A >>> 7\nB >>> 5\nC >>> 8\n");
+    printf("Quanti municipi ha Roma?\n");
+    printf("A >>> 15\nB >>> 5\nC >>> 12\n");
     printf("Inserire la risposta:");
     scanf(" %s", risposta2);
 
