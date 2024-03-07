@@ -33,7 +33,7 @@ void print_menu() {
 int gioca_partita() {
     int punteggio = 0;
     char nome[20];
-    char risposta1[2], risposta2[2];
+    char risposta1[2], risposta2[2], risposta3[2];
 
     printf("Inserisci il tuo nome:\n");
     scanf("%s", nome);
@@ -58,6 +58,15 @@ int gioca_partita() {
         punteggio++;
     }
 
+    printf("Domanda numero 3:\n");
+    printf("Quale monumento o luogo rende famosa Roma?\n");
+    printf("A >>> Villa Bellini\nB >>> Basilica di San Marco\nC >>> Colosseo\n");
+    printf("Inserire la risposta:");
+    scanf(" %s", risposta3);
+
+    if (risposta3[0] == 'C') {
+        punteggio++;
+    }
     printf("Partita conclusa, punteggio totalizzato da %s:%d\n", nome, punteggio);
 
     return 0;
